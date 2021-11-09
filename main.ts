@@ -11,8 +11,9 @@ basic.forever(function () {
     Temp = Temp * 10
     Temp = Math.round(Temp)
     Temp = Temp / 10
-    basic.showString("" + Temp)
-    serial.writeString("" + Temp)
+    Temp = DS18B20.TemperatureNumber(DS18B20.pin.pin16)
+    basic.showString("" + (Temp))
+    serial.writeString("" + (Temp))
     control.waitMicros(Timer)
     Temp = 0
 })
